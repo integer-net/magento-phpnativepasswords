@@ -9,5 +9,8 @@
         </span>
     </div>
 
-    <?php Mage::register(EW_NativePasswords_Block_Adminhtml_Notification_Enabled::MESSAGE_SHOWN_CANARY_REGISTRY_KEY, true); ?>
+    <?php if (empty(Mage::registry(EW_NativePasswords_Block_Adminhtml_Notification_Enabled
+    ::MESSAGE_SHOWN_CANARY_REGISTRY_KEY))): ?>
+        <?php Mage::register(EW_NativePasswords_Block_Adminhtml_Notification_Enabled::MESSAGE_SHOWN_CANARY_REGISTRY_KEY, true); ?>
+    <?php endif; ?>
 <?php endif; ?>
